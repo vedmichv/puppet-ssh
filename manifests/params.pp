@@ -1,6 +1,8 @@
 class ssh::params {
 # case $facts['os']['family'] {
- case $facts['operatingsystem'] {
+  $permit_root_loging = false
+  $port = 22
+  case $facts['operatingsystem'] {
     'Debian', 'Ubuntu': {
       $package_name = 'openssh-server'
       $service_name = 'ssh'
@@ -14,7 +16,7 @@ class ssh::params {
       fail("${facts['operatingsystem']} is not supported!")
     }
   }
-  $permit_root_loging = false
+#  $permit_root_loging = false
 #  if $facts['os']['family'] == 'Debian' {
 #    $package_name = 'openssh-server'
 #    $service_name = 'ssh'
