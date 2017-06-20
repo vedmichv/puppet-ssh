@@ -7,14 +7,14 @@ function ssh::data {
   case $facts['os']['family'] {
     'Debian': {
       $os_params = {
-        'ssh::package_name' => 'openssh_server',
-        'ssh::package_name' => 'ssh',
+        'ssh::package_name' => 'openssh-server',
+        'ssh::service_name' => 'ssh',
       }
     }
     'RedHat': {
       $os_params = {
-        'ssh::package_name' => 'openssh_server',
-        'ssh::package_name' => 'sshd',
+        'ssh::package_name' => 'openssh-server',
+        'ssh::service_name' => 'sshd',
       }
     }
     default: {

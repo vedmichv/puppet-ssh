@@ -5,6 +5,5 @@ class ssh::install(
   package {'ssh-package':
     ensure  => $ensure,
     name    => $package_name,
-
   }
 }
